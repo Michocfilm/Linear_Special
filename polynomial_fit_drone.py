@@ -75,13 +75,13 @@ if __name__ == "__main__":
     print("\nผลลัพธ์สมการพหุนาม")
     print(format_polynomial(coeffs))
     # print(f"ค่าความแม่นยำของแบบจำลอง (R^2) = {r2:.6f}")
-    t_test = 6
+    t_test = 10
     h_test = predict(coeffs, t_test)
     print(f"\nพยากรณ์ความสูงที่ t = {t_test} วินาที -> h = {round(h_test, 3)} เมตร")
 
     plt.figure(figsize=(7, 5))
     plt.scatter(x, y, color="crimson", label="Measured data (sensor)", zorder=3)
-    xs = np.linspace(0, 6, 200)
+    xs = np.linspace(0, 10, 200)
     ys = predict(coeffs, xs)
     plt.plot(xs, ys, color="navy", label="Fitted polynomial (degree 2)")
     plt.axvline(5, color="gray", linestyle="--", linewidth=0.8)
